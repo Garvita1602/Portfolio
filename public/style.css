@@ -1,0 +1,393 @@
+/* Reset Default Margins and Fullscreen Body */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    /* Disable scrolling */
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 300% 300%;
+    animation: move-bg 10s infinite alternate;
+    color: #fff;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    /* Green background */
+    color: white;
+    /* White text */
+    transition: all 0.3s ease;
+}
+
+button#next-button {
+    background-color: #2196f3;
+    /* Blue background */
+}
+
+.about-content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 20px;
+    text-align: justify;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+}
+
+.about-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, and Opera */
+}
+
+blockquote {
+    font-style: italic;
+    margin: 15px 20px;
+    padding: 10px 15px;
+    border-left: 4px solid #ffcc00;
+    background-color: #0a0a0a;
+    border-radius: 5px;
+}
+
+button#next-button:hover {
+    background-color: #0b7dda;
+    /* Darker blue on hover */
+}
+
+button#previous-button {
+    background-color: #ff9800;
+    /* Orange background */
+}
+
+button#previous-button:hover {
+    background-color: #e68a00;
+    /* Darker orange on hover */
+}
+
+button#restart-button {
+    background-color: #f44336;
+    /* Red background */
+}
+
+button#restart-button:hover {
+    background-color: #d32f2f;
+    /* Darker red on hover */
+}
+
+
+/* Background Animation */
+
+@keyframes move-bg {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+
+/* Content Container */
+
+#content-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+
+/* Content Box */
+
+#content {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 70%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#content h2 {
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+#content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+#content button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    border: none;
+    border-radius: 50px;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#content button:hover {
+    background: #00ff7f;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 255, 127, 0.4);
+}
+
+
+/* Section Boxes */
+
+.skill-box,
+.project-box,
+.academic-box,
+.contact-box {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    font-size: 1.2rem;
+    display: inline-block;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.contact-box a {
+    color: #fff;
+    /* Ensure text is visible on dark backgrounds */
+    text-decoration: underline;
+    /* Highlight links */
+    font-weight: bold;
+}
+
+.contact-box a:hover {
+    color: #ffcc00;
+    /* Add hover effect for better visibility */
+    text-decoration: none;
+    /* Optionally remove underline on hover */
+}
+
+.contact-box p {
+    margin: 5px 0;
+    /* Add spacing for better readability */
+}
+
+.contact-box {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    /* Add semi-transparent background for visibility */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.skill-box:hover,
+.project-box:hover,
+.academic-box:hover,
+.contact-box:hover {
+    transform: scale(1.05) rotateX(10deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.skill-box h3,
+.project-box h3,
+.academic-box h3,
+.contact-box h3 {
+    font-size: 1.5rem;
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+
+/* Emoji Enhancements */
+
+.skill-box:hover::before,
+.project-box:hover::before {
+    content: "🚀 ";
+}
+
+
+/* Toggle Button */
+
+.toggle-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.toggle-button:hover {
+    background: rgba(0, 255, 0, 0.8);
+    transform: scale(1.1);
+}
+
+
+/* Fade-In Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Hidden Details Styling */
+
+.details {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    display: none;
+    /* Initially hidden */
+}
+
+
+/* Thin scrollbar styling */
+
+#projects-content {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+}
+
+#projects-content::-webkit-scrollbar {
+    display: none;
+    /* Thin scrollbar for Webkit browsers */
+}
+
+#projects-content::-webkit-scrollbar-thumb {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    background-color: #888;
+}
+
+#projects-content::-webkit-scrollbar-thumb:hover {
+    display: none;
+}
+
+
+/* Popup effect styling */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.details-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+}
+
+.details-popup.active {
+    display: block;
+}
+
+
+/* Projects Container */
+
+#projects-container {
+    max-height: 70vh;
+    /* Limit the height of the project list */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    padding: 10px;
+    margin-bottom: 20px;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+}
+
+#projects-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Project Box Styling */
+
+.project-box {
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.project-box:hover {
+    transform: scale(1.02);
+    /* Slight zoom on hover */
+}
+
+
+/* Fixed Navigation Button */
+
+.navigate-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.navigate-button:hover {
+    background: rgba(0, 255, 0, 0.8);
+}
